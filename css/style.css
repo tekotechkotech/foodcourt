@@ -1,0 +1,7 @@
+ .vertical-alignment-helper {
+    position: absolute;
+    margin-top: -100px;
+    margin-left: -150px;
+    left: 50%;
+    top: 50%;
+ }
