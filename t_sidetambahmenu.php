@@ -56,15 +56,13 @@ include 't_head.html';
 
 
 <div class="sidenav">
-    <h1 class="text-light">STAND</h1>
-  <a href="stand_page.php">Home</a>
+    <h1 class="text-light">stand</h1>
+  
+  <a href="stand_tambahMenu.php"> tambah menu </a>
   <br>
   <br>
-  <a href="stand_pesan.php">Pemesanan</a>
-  <br>
-  <br>
-  <a href="stand_tambahMenu.php">My Menu</a>
-  <a href="stand_saldo.php">My Saldo</a>
+  <a href="stand_datamenu.php">lihat data menu</a>
+ 
 </div>
 
 <div class="main">
