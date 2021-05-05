@@ -58,13 +58,13 @@ include 't_head.html';
 
 <div class="sidenav">
     <h1 class="text-light">KASIR</h1>
-  <a href="kasir_page.php">Home</a>
+  <a href="stand_page.php">Home</a>
   <br>
   <br>
-  <a href="kasir_tambahPengunjung.php">Tambah Pengunjung</a>
+  <a href="stand_pesan.php">Tambah Pengunjung</a>
   <br>
   <br>
-  <a href="kasir_dataPengunjung.php">Data Pengunjung</a>
+  <a href="stand_menu.php">Data Pengunjung</a>
 </div>
 
 <div class="main">
