@@ -2,14 +2,14 @@
 include 't_sideKasir.php';
 
 $username=$_SESSION['username'];
-$adm_id=$_SESSION['adm_id'];
-// $nama=$_SESSION['adm_nama'];
-$result= mysqli_query($koneksi, "SELECT * FROM adm where adm_username='$username'");
+$adm_id=$_SESSION['id'];
+// $nama=$_SESSION['nama_kasir'];
+$result= mysqli_query($koneksi, "SELECT * FROM kasir where username_kasir='$username'");
 
 $bio= mysqli_fetch_array($result);
-$nama=$bio["adm_nama"];
-$username=$bio["adm_username"];
-$email=$bio["adm_email"];
+$nama=$bio["nama_kasir"];
+$username=$bio["username_kasir"];
+$email=$bio["email_kasir"];
 // $id=$bio["id"];
 
 // $hp=$bio["hp"];
