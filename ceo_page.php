@@ -15,7 +15,7 @@ $username=$bio["username_ceo"];
 ?>
 
 <title>
-    Kasir Foodcourt
+    CEO Foodcourt
 </title>
 
 <div class="main">
