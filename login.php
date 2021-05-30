@@ -6,8 +6,7 @@
 
 <?php include 't_topLogin.html'; ?>
 
-<body style="background-image: url('background/resto.jpg');background-repeat: no-repeat;
-  background-size: cover;">
+<body>
 
     <div class="vertical-alignment-helper">
             <h2 class="text-center text-bold">Login</h2>
