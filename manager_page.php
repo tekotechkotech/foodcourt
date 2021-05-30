@@ -22,7 +22,7 @@ $id=$bio["id_manager"];
 <div class="main">
     <div class="jumbotron" style="height: 10cm;">   
 
-    <h2 class="pt-5 pl-5">Selamat datang, <h1 class="pl-5"><b><?= $nama?></b></h1></h2><br><br>
+    <h2 class="pt-5 pl-5">Selamat datang <h1 class="pl-5"><b><?= $nama?></b></h1></h2><br><br>
         
        
 
