@@ -6,11 +6,8 @@ $result= mysqli_query($koneksi, "SELECT * FROM stand where id_stand='$id_stand'"
 
 $bio= mysqli_fetch_array($result);
 $nama = $bio['nama_stand'];
-$username = $bio['username_stand'];
 $pemilik = $bio['nama_penyewastand'];
-$idpemilik = $bio['id_penyewastand'];
-$ukuran = $bio['ukuran_stand'];
-$foto = $bio['foto_stand'];
+$jenis = $bio['jenis_stand'];
 ?>
 
 <title>
@@ -22,46 +19,31 @@ $foto = $bio['foto_stand'];
         <h1 class="pl-5 pb-3"><b>Biodata <?= $nama?></b></h1></div>
         <div class="container row">
             <div class="col-md-6">
+            <form action="C_managerstandEdit.php" method="post">
                 <div class="row">
                     <div class="col">
-                        <p class="pl-5">Nama Stand
+                        <p class="pl-5">Nama Stand 
                     </div>
-                    <div class="col"> : <b><?= $nama?></b></p>
-                    </div>
+                <input type="text"  value="<?= $nama?>" name="nama_stand" required=>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p class="pl-5">Username Stand
+                        <p class="pl-5">Nama Penyewa
                     </div>
-                    <div class="col"> : <b><?= $username?></b></p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <p class="pl-5">ID Pemilik
-                    </div>
-                    <div class="col"> : <b><?= $idpemilik?></b></p>
-                    </div>
+                    <input type="text"  value="<?= $pemilik?>" name="username_stand" required=>
+                    
                 </div>
 
                 <div class="row">
                     <div class="col">
-                        <p class="pl-5">Nama Pemilik
+                        <p class="pl-5">Jenis Jualan Stand
                     </div>
-                    <div class="col"> : <b><?= $pemilik?></b></p>
-                    </div>
+                    <input type="text"  value="<?= $jenis?>" name="jenis_stand" required=>
+                    
                 </div>
-
-                <div class="row">
-                    <div class="col">
-                        <p class="pl-5">Ukuran Stand
-                    </div>
-                    <div class="col"> : <b><?= $ukuran?></b></p>
-                    </div>
-                </div>
-                <div class="navbar ml-auto pl-5">
-                    <a class="btn btn-primary" href="manager_datastand.php">Kembali</a>
+                <div class="pl-5">
+                    <a class="btn btn-warning" href="manager_datastand.php">Kembali</a>
+                <a class="btn btn-primary" href="manager_editStand.php">ubah</a>
                 </div>
             </div>
         </div>

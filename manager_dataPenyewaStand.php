@@ -10,7 +10,7 @@ $user = mysqli_query($koneksi,"SELECT * FROM penyewastand");
 <div class="main">
     <div class="jumbotron">
         <div class="navbar ml-auto">
-        <h2 class="pt-3">Data Penyewa penyewastand</h2>
+        <h2 class="pt-3">Data Penyewa Stand</h2>
         <a href="manager_tambahpenyewastand.php" class="btn btn-primary text-light " ><h6><i class="bi bi-person-plus"></i>Tambah Data</h6></a>
         </div>
         

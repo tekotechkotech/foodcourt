@@ -1,7 +1,7 @@
 <?php
 include 't_sideManager.php';
-$user = mysqli_query($koneksi,"SELECT * FROM stand where status_stand='Aktif'");
-$us = mysqli_query($koneksi,"SELECT * FROM stand where status_stand='Non-Aktif'");
+$user = mysqli_query($koneksi,"SELECT * FROM stand where jenis_stand!=''");
+$us = mysqli_query($koneksi,"SELECT * FROM stand where jenis_stand=''");
 ?>
 
 <title>
@@ -10,7 +10,11 @@ $us = mysqli_query($koneksi,"SELECT * FROM stand where status_stand='Non-Aktif'"
 
 <div class="main">
     <div class="jumbotron">
+    
+    <div class="navbar ml-auto">
         <h2 class="pt-3">Data Stand</h2>
+        <a href="manager_tambahStand.php" class="btn btn-primary text-light " ><h6>Tambah Stand</h6></a>
+        </div>
         
         
         <table class="table table-hover">
@@ -22,7 +26,6 @@ $us = mysqli_query($koneksi,"SELECT * FROM stand where status_stand='Non-Aktif'"
             <th scope="col">Jenis Stand</th>
             <th scope="col">Nama Penyewa Stand</th>
             <th scope="col">Harga Sewa Stand</th>
-            <th scope="col">Status Stand</th>
             <th scope="col"></th>
             </tr>
         </thead>
@@ -34,10 +37,9 @@ $us = mysqli_query($koneksi,"SELECT * FROM stand where status_stand='Non-Aktif'"
             <td><?= $row["nama_stand"] ?></td>
             <td><?= $row["jenis_stand"] ?></td>
             <td><?= $row["nama_penyewastand"] ?></td>
-            <td><?= $row["hargasewa_stand"] ?></td>
-            <td><?= $row["status_stand"] ?></td>
+            <td>Rp. <?= $row["hargasewa_stand"] ?></td>
                 <td>
-                    <a class="btn btn-primary" href="manager_detailstand.php?id_stand=<?= $row["id_stand"]; ?>">Edit</a>
+                    <a class="btn btn-primary" href="manager_editstand.php?id_stand=<?= $row["id_stand"]; ?>">Edit</a>
                     <a class="btn btn-success" href="manager_pembayaran stand.php?id_stand=<?= $row["id_stand"]; ?>">Pembayaran</a>
                 </td>
             </tr>
@@ -49,10 +51,9 @@ $us = mysqli_query($koneksi,"SELECT * FROM stand where status_stand='Non-Aktif'"
             <td><?= $r["id_stand"] ?></td>
             <td><?= $r["ukuran_stand"] ?></td>
             <td  colspan="3" ><center>Stand tidak tersewa / Non-Aktif</center></td>
-            <td><?= $r["hargasewa_stand"] ?></td>
-            <td><?= $r["status_stand"] ?></td>
+            <td>Rp. <?= $r["hargasewa_stand"] ?></td>
                 <td>
-                    <a class="btn btn-success" href="manager_editstand.php?id_stand=<?= $r["id_stand"]; ?>">Sewa / Aktifkan</a>
+                    <a class="btn btn-success" href="manager_editStand.php?id_stand=<?= $r["id_stand"]; ?>">Sewa / Aktifkan</a>
                     <a class="btn btn-danger" href="manager_hapusstand.php?id_stand=<?= $r["id_stand"]; ?>">Hapus</a>
                 </td>
             </tr>
