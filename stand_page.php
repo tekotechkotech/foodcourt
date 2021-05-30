@@ -38,10 +38,7 @@ $username =$bio["username_sewastand"];
 
 <?php 
 include 't_foot.html';
-      
-<?php
 include 't_sideStand.php';
-
 $username=$_SESSION['username'];
 $adm_id=$_SESSION['adm_id'];
 // $nama=$_SESSION['adm_nama'];

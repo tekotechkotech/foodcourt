@@ -57,9 +57,11 @@ include 't_head.html';
   <br>
   <br>
   <a href="manager_dataKasir.php">Data Kasir</a>
+  <br>
+  <br>
+  
   <a href="manager_dataStand.php">Data Stand</a>
-  <br>
-  <br>
+  <a href="manager_dataPenyewaStand.php">Data Penyewa Stand</a>
 </div>
 
 <div class="main">

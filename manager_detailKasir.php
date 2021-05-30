@@ -1,28 +1,28 @@
 <?php
 include 't_sideManager.php';
 
-$id_kasir=$_GET['id_kasir'];
-$result= mysqli_query($koneksi, "SELECT * FROM kasir where id_kasir='$id_kasir'");
+$id_manager=$_GET['id_manager'];
+$result= mysqli_query($koneksi, "SELECT * FROM manager where id_manager='$id_manager'");
 
 $bio= mysqli_fetch_array($result);
-$nama = $bio['nama_kasir'];
-$username = $bio['username_kasir'];
-$password = $bio['password_kasir'];
-$tempatlahir = $bio['tempatlahir_kasir'];
-$tanggallahir = $bio['tgllahir_kasir'];
-$jk = $bio['jk_kasir'];
-$agama = $bio['agama_kasir'];
-$alamat = $bio['alamat_kasir'];
-$email = $bio['email_kasir'];
-$no_hp = $bio['no_hp_kasir'];
-$foto = $bio['foto_kasir'];
+$nama = $bio['nama_manager'];
+$username = $bio['username_manager'];
+$password = $bio['password_manager'];
+$tempatlahir = $bio['tempatlahir_manager'];
+$tanggallahir = $bio['tgllahir_manager'];
+$jk = $bio['jk_manager'];
+$agama = $bio['agama_manager'];
+$alamat = $bio['alamat_manager'];
+$email = $bio['email_manager'];
+$no_hp = $bio['no_hp_manager'];
+$foto = $bio['foto_manager'];
 // $id=$bio["id"];
 
 // $hp=$bio["hp"];
 ?>
 
 <title>
-    Manager Foodcourt
+    CEO Foodcourt
 </title>
 
 <div class="main">
@@ -109,7 +109,7 @@ $foto = $bio['foto_kasir'];
                     </div>
                 </div>
                 <div class="navbar ml-auto pl-5">
-                    <a class="btn btn-primary" href="manager_dataKasir.php">Kembali</a>
+                    <a class="btn btn-primary" href="CEO_datamanager.php">Kembali</a>
                 </div>
             </div>
         </div>

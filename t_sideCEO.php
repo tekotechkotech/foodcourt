@@ -57,12 +57,12 @@ include 't_head.html';
 
 <div class="sidenav">
     <h1 class="text-light">CEO</h1>
-  <a href="stand_page.php">Home</a>
+  <a href="ceo_page.php">Home</a>
   <br>
   <br>
-  <a href="stand_pesan.php">Data Manager</a>
-  <a href="stand_pesan.php">Data Kasir</a>
-  <a href="stand_pesan.php">Data Stand</a>
+  <a href="ceo_dataManager.php">Data Manager</a>
+  <a href="ceo_dataKasir.php">Data Kasir</a>
+  <a href="ceo_dataStand.php">Data Stand</a>
   <br>
   <br>
   <a href="stand_menu.php">Saldo</a>
