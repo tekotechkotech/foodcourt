@@ -1,5 +1,5 @@
 <?php
-include 't_sidekasir.php';
+include 't_sideKasir.php';
 ?>
 
 <title>
@@ -13,17 +13,27 @@ include 't_sidekasir.php';
             <form action="C_kasirTambahPengunjung.php" method="post">
                             <div class="form-row">
                                 <div class="form-group col">
-                                    <input type="text" class="form-control" placeholder="NO. ID" name="id" Required>
+                                    <input type="text" class="form-control" placeholder="NO. KTP" name="id_pengunjung" Required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col">
-                                    <input type="text" class="form-control" placeholder="nama" name="nama" Required>
+                                    <input type="text" class="form-control" placeholder="Nama" name="nama_pengunjung" Required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col">
-                                    <input type="text" class="form-control" placeholder="Saldo" name="saldo" Required>
+                                    <input type="text" class="form-control" placeholder="No Hp" name="no_hp_pengunjung" Required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <input type="email" class="form-control" placeholder="Email" name="email_pengunjung" id="textfield2" Required="">
+                                </div>
+                                </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <input type="text" class="form-control" placeholder="Saldo" name="saldo_pengunjung" id="textfield2" Required="">
                                 </div>
                             </div>
                             <button type="submit" class=" btn btn-primary" name="button" id="button" value="Proses"><b>TAMBAH</b></button>

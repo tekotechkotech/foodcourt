@@ -3,40 +3,32 @@
 include 'koneksi.php';
 
   // membuat variabel untuk menampung data dari form
-
-$id_kasir=$_POST['id_kasir'];
-
-$nama = $_POST['nama_kasir'];
-$username = $_POST['username_kasir'];
-$password = $_POST['password_kasir'];
-$tempatlahir = $_POST['tempatlahir_kasir'];
-$tanggallahir = $_POST['tgllahir_kasir'];
-$jk = $_POST['jk_kasir'];
-$agama = $_POST['agama_kasir'];
-$alamat = $_POST['alamat_kasir'];
-$email = $_POST['email_kasir'];
-$no_hp = $_POST['no_hp_kasir'];
-
+ 
+  $nama = $_POST['nama_kasir'];
+  $username = $_POST['username_kasir'];
+  $password = $_POST['password_kasir'];
+  $tempatlahir = $_POST['tempatlahir_kasir'];
+  $tanggallahir = $_POST['tgllahir_kasir'];
+  $jk = $_POST['jk_kasir'];
+  $agama = $_POST['agama_kasir'];
+  $alamat = $_POST['alamat_kasir'];
+  $email = $_POST['email_kasir'];
+  $no_hp = $_POST['no_hp_kasir'];
+  $foto = $_POST['foto_kasir'];
 
 // (id tidak perlu karena dibikin otomatis)
-$query = "UPDATE kasir SET nama_kasir='$nama',username_kasir='$username',
-password_kasir='$password',tempatlahir_kasir='$tempatlahir',tgllahir_kasir='$tanggallahir',
-jk_kasir='$jk',agama_kasir='$agama',alamat_kasir='$alamat',email_kasir='$email',
-no_hp_kasir='$no_hp' WHERE id_kasir='$id_kasir'";
+$query = "INSERT INTO kasir (`nama_kasir`,`username_kasir`,`password_kasir`,
+`tempatlahir_kasir`,`tgllahir_kasir`,`jk_kasir`,`agama_kasir`,`alamat_kasir`,
+`email_kasir`,`no_hp_kasir`,`foto_kasir`) VALUES ('$nama', '$username', '$password', '$tempatlahir', '$tanggallahir',
+'$jk', '$agama', '$alamat', '$email', '$no_hp', '$foto')";
 
-if (mysqli_query($koneksi,$query) == true) {
-  echo "
-          <script>
-              alert('Data Berhasil Diupdate!');
-              document.location.href = 'manager_dataKasir.php';
-          </script>
-      ";
-} else {
-  echo "
-          <script>
-              alert('Data Gagal Diupdate!');
-              document.location.href = 'manager_editKasir.php';
-          </script>
-      ";
-}
-?>
+$result = mysqli_query($koneksi, $query);
+    if(!$result){
+        die ("Query gagal dijalankan: ".mysqli_errno($koneksi).
+          " - ".mysqli_error($koneksi));
+    } else {
+      //tampil alert dan akan redirect ke halaman index.php
+      //silahkan ganti index.php sesuai halaman yang akan dituju
+      echo "<script>alert('Edit Data Berhasil.');window.location='manager_dataKasir.php';</script>";
+    }
+  ?>

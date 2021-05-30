@@ -60,11 +60,14 @@ include 't_head.html';
     <h1 class="text-light">KASIR</h1>
   <a href="stand_page.php">Home</a>
   <br>
+  <a href="kasir_tambahPengunjung.php">Tambah Pengunjung</a>
   <br>
-  <a href="stand_pesan.php">Tambah Pengunjung</a>
+  <a href="kasir_dataPengunjung.php">Data Pengunjung</a>
   <br>
+  <a href="kasir_cairSaldoPenyewa.php">Cair Saldo Penyewa</a>
   <br>
-  <a href="stand_menu.php">Data Pengunjung</a>
+  <a href="kasir_detailsaldopengunjung.php">Detail Saldo Pengunjung</a>
+
 </div>
 
 <div class="main">

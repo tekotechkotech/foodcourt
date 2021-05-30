@@ -31,10 +31,10 @@ CREATE TABLE sewastand (
 );
 
 CREATE TABLE pengunjung (
-  id_pengunjung varchar(5) NOT NULL PRIMARY KEY,
+  id_pengunjung varchar(20) NOT NULL PRIMARY KEY,
   nama_pengunjung varchar(255) NOT NULL,
-  username_pengunjung varchar(255) NOT NULL,
-  password_pengunjung varchar(255) NOT NULL,
+  no_hp_pengunjung varchar(15)NOT NULL,
+  email_pengunjung varchar(255) NOT NULL,
   saldo_pengunjung int(9) NOT NULL
 );
 
@@ -79,6 +79,16 @@ CREATE TABLE detailsaldostand (
     CONSTRAINT FK_menuStand FOREIGN KEY (id_sewastand) REFERENCES sewastand(id_sewastand),
     CONSTRAINT FK_transaksiPengunjung FOREIGN KEY (id_pengunjung) REFERENCES pengunjung(id_pengunjung)
 );
+
+create table cairsalsopengunjung (
+  id_cairsaldo varchar(5) not null primary key,
+  id_pengunjung varchar(20) not null,
+  saldo_keluar int (9) not null,
+  tgl_keluar date not null,
+  jam_keluar time not null
+  constraint FK_cairsaldopengunjung foreign key (id_pengunjung) REFERENCES pengunjung (id_pengunjung)
+);
+
 
 
 CREATE TABLE detailsaldopengunjung (

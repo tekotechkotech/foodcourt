@@ -54,8 +54,9 @@ include 't_head.html';
 <div class="sidenav">
     <h1 class="text-light">Manager</h1>
   <a href="manager_page.php">Home</a>
+  <br>
+  <br>
   <a href="manager_dataKasir.php">Data Kasir</a>
-  <a href="manager_dataPenyewaStand.php">Data Penyewa Stand</a>
   <a href="manager_dataStand.php">Data Stand</a>
   <br>
   <br>

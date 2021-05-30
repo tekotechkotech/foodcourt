@@ -27,8 +27,6 @@ $foto = $bio['foto_kasir'];
         <div class="container p-3">
             <h3 class="text-center p-4">Edit Data Kasir</h3>
             <form action="C_managerKasirEdit.php" method="post">
-                <input type="hidden" name="id_kasir" value="<?= $id_kasir; ?>>
-                
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
@@ -38,7 +36,6 @@ $foto = $bio['foto_kasir'];
                                 <label class="custom-file-label" name="foto_kasir" for="inputGroupFile01">Pilih File</label>
                             </div>
                         </div>
-
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <input type="text" class="form-control" value="<?= $nama; ?>" placeholder="Nama Lengkap" name="nama_kasir" Required>

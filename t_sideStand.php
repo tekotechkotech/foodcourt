@@ -63,7 +63,7 @@ include 't_head.html';
   <a href="stand_pesan.php">Pemesanan</a>
   <br>
   <br>
-  <a href="stand_menu.php">My Menu</a>
+  <a href="stand_tambahMenu.php">My Menu</a>
   <a href="stand_saldo.php">My Saldo</a>
 </div>
 
