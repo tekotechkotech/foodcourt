@@ -50,8 +50,8 @@ $us = mysqli_query($koneksi,"SELECT * FROM stand where jenis_stand=''");
             <td  colspan="3" ><center>Stand tidak tersewa / Non-Aktif</center></td>
             <td>Rp. <?= $r["hargasewa_stand"] ?></td>
                 <td>
-                    <a class="btn btn-success" href="manager_editStand.php?id_stand=<?= $r["id_stand"]; ?>">Sewa / Aktifkan</a>
-                    <a class="btn btn-danger" href="manager_hapusstand.php?id_stand=<?= $r["id_stand"]; ?>">Hapus</a>
+                    <a class="btn btn-success" href="manager_aktifStand.php?id_stand=<?= $r["id_stand"]; ?>">Sewa / Aktifkan</a>
+                    <a class="btn btn-danger" href="C_managerstandhapus.php?id_stand=<?= $r["id_stand"]; ?>">Hapus</a>
                 </td>
             </tr>
         </tbody>
