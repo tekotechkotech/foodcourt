@@ -37,8 +37,7 @@ $us = mysqli_query($koneksi,"SELECT * FROM stand where jenis_stand=''");
             <td><?= $row["nama_penyewastand"] ?></td>
             <td>Rp. <?= $row["hargasewa_stand"] ?></td>
                 <td>
-                    <a class="btn btn-primary" href="manager_editstand.php?id_stand=<?= $row["id_stand"]; ?>">Edit</a>
-                    <a class="btn btn-success" href="manager_pembayaran stand.php?id_stand=<?= $row["id_stand"]; ?>">Pembayaran</a>
+                    <a class="btn btn-danger" href="c_managerStandnonaktif.php?id_stand=<?= $row["id_stand"]; ?>">Non-Aktifkan</a>
                 </td>
             </tr>
         </tbody>
