@@ -1,6 +1,7 @@
 <?php
 include 't_sideManager.php';
-$user = mysqli_query($koneksi,"SELECT * FROM stand");
+$user = mysqli_query($koneksi,"SELECT * FROM stand where status_stand='Aktif'");
+$us = mysqli_query($koneksi,"SELECT * FROM stand where status_stand='Non-Aktif'");
 ?>
 
 <title>
@@ -9,27 +10,56 @@ $user = mysqli_query($koneksi,"SELECT * FROM stand");
 
 <div class="main">
     <div class="jumbotron">
-        <div class="navbar ml-auto">
         <h2 class="pt-3">Data Stand</h2>
-        <a href="manager_tambahstand.php" class="btn btn-primary text-light " ><h6><i class="bi bi-person-plus"></i>Tambah Data</h6></a>
-        </div>
         
-
-       
+        
+        <table class="table table-hover">
+        <thead class="table-dark">
+            <tr>
+            <th scope="col">No. Stand</th>
+            <th scope="col">Ukuran</th>
+            <th scope="col">Nama Stand</th>
+            <th scope="col">Jenis Stand</th>
+            <th scope="col">Nama Penyewa Stand</th>
+            <th scope="col">Harga Sewa Stand</th>
+            <th scope="col">Status Stand</th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
         <?php foreach ($user as $row) : ?>
-        <div class="card">
-    <div class="card-body">
-    <div class="row navbar ml-auto">
-    <div class="col-1"><?= $row["id_stand"] ?></div>
-    <div class="col-5"><strong> <?= $row["nama_stand"] ?></strong></div>
-                    <div class="col-4 "><a class="btn btn-success pl-4 pr-4" href="manager_detailstand.php?id_stand=<?= $row["id_stand"]; ?>">Detail</a>
-                    <a class="btn btn-success pl-4 pr-4" href="manager_editstand.php?id_stand=<?= $row["id_stand"]; ?>">Edit</a>
-                    <a class="btn btn-danger pl-4 pr-4 " href="c_managerstandHapus.php?id_stand=<?= $row["id_stand"]; ?>">Hapus</a></div></div>
-    </div>
-</div>
-<?php endforeach; ?>
-    </div>
-</div>
+        <tbody>
+            <tr>
+            <td><?= $row["id_stand"] ?></td>
+            <td><?= $row["ukuran_stand"] ?></td>
+            <td><?= $row["nama_stand"] ?></td>
+            <td><?= $row["jenis_stand"] ?></td>
+            <td><?= $row["nama_penyewastand"] ?></td>
+            <td><?= $row["hargasewa_stand"] ?></td>
+            <td><?= $row["status_stand"] ?></td>
+                <td>
+                    <a class="btn btn-primary" href="manager_detailstand.php?id_stand=<?= $row["id_stand"]; ?>">Edit</a>
+                    <a class="btn btn-success" href="manager_pembayaran stand.php?id_stand=<?= $row["id_stand"]; ?>">Pembayaran</a>
+                </td>
+            </tr>
+        </tbody>
+                <?php endforeach; ?>
+                <?php foreach ($us as $r) : ?>
+        <tbody>
+            <tr>
+            <td><?= $r["id_stand"] ?></td>
+            <td><?= $r["ukuran_stand"] ?></td>
+            <td  colspan="3" ><center>Stand tidak tersewa / Non-Aktif</center></td>
+            <td><?= $r["hargasewa_stand"] ?></td>
+            <td><?= $r["status_stand"] ?></td>
+                <td>
+                    <a class="btn btn-success" href="manager_editstand.php?id_stand=<?= $r["id_stand"]; ?>">Sewa / Aktifkan</a>
+                    <a class="btn btn-danger" href="manager_hapusstand.php?id_stand=<?= $r["id_stand"]; ?>">Hapus</a>
+                </td>
+            </tr>
+        </tbody>
+                <?php endforeach; ?>
+        </table>
+
 
 
 
