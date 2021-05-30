@@ -15,8 +15,6 @@ $us = mysqli_query($koneksi,"SELECT * FROM stand where jenis_stand=''");
         <h2 class="pt-3">Data Stand</h2>
         <a href="manager_tambahStand.php" class="btn btn-primary text-light " ><h6>Tambah Stand</h6></a>
         </div>
-        
-        
         <table class="table table-hover">
         <thead class="table-dark">
             <tr>
