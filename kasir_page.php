@@ -1,14 +1,15 @@
 <?php
 include 't_sideKasir.php';
 
-$username=$_SESSION['username_kasir'];
-// $ceo_id=$_SESSION['ceo_id'];
-// $nama=$_SESSION['ceo_nama'];
-$result= mysqli_query($koneksi, "SELECT * FROM kasir where username_kasir='$username'");
+$username=$_SESSION['username'];
+$adm_id=$_SESSION['adm_id'];
+// $nama=$_SESSION['adm_nama'];
+$result= mysqli_query($koneksi, "SELECT * FROM adm where adm_username='$username'");
 
 $bio= mysqli_fetch_array($result);
-$nama=$bio["nama_kasir"];
-$username=$bio["username_kasir"];
+$nama=$bio["adm_nama"];
+$username=$bio["adm_username"];
+$email=$bio["adm_email"];
 // $id=$bio["id"];
 
 // $hp=$bio["hp"];
@@ -31,8 +32,19 @@ $username=$bio["username_kasir"];
                     </div>
                 </div>
                     
+                <div class="row">
+                    <div class="col">
+                        <p class="pl-5">Email   </div><div class="col"> : <b><?= $email?></b></p>
+                    </div>
+                </div>
                         
-            
+            </div>
+            <div class="col-md-4 ml-auto">
+            <div class="container navbar-nav">
+                            <a class="btn btn-primary p-3" href="adm_ubah.php?adm_username=<?=$bio["adm_username"]; ?>">Edit</a>
+                        </div>
+                
+            </div>
         </div>
         </div>
 

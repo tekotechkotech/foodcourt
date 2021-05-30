@@ -1,5 +1,5 @@
 <?php
-include 't_sidetambahMenu.php';
+include 't_sideStand.php';
 $user = mysqli_query($koneksi,"SELECT * FROM menu");
 ?>
 
@@ -11,7 +11,8 @@ $user = mysqli_query($koneksi,"SELECT * FROM menu");
 
 <div class="main">
     <div class="jumbotron">
-        <h1 class="pt-5">Data menu </h1>
+        <h1 class="pt-5">Data menu  </h1>
+       
         <table class="table table-hover">
         <thead class="table-dark">
             <tr>
@@ -32,8 +33,9 @@ $user = mysqli_query($koneksi,"SELECT * FROM menu");
             <td><?= $row["nama_menu"] ?></td>
             <td><?= $row["harga_menu"] ?></td>
             <td>
-                <a class="btn btn-primary" href="stand_tambahMenu.php?id_menu=<?=$row["id_menu"]; ?>">Tambah Menu</a>
-            </tr></td>
+                <a class="btn btn-primary" href="c_standhapus.php?id_menu=<?=$row["id_menu"]; ?>">hapus</a>
+                <a class="btn btn-primary" href="stand_editmenu.php?id_menu=<?=$row["id_menu"]; ?>">edit</a>
+                
             </tr>
         </tbody>
                 <?php endforeach; ?>
